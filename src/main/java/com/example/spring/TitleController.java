@@ -19,7 +19,9 @@ public class TitleController {
     }
 
     @GetMapping
-    public List<Book> getAllBooks() {
+    public List<Book> getAllBooks(@RequestParam(required = false) String name) {
+        if (name != null)
+            return bookService.findByName(name);
         return bookService.getAllBooks();
     }
 

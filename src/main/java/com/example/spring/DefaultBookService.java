@@ -23,6 +23,14 @@ public class DefaultBookService extends BookService {
     }
 
     @Override
+    public List<Book> findByName(String name) {
+        Iterable<BookEntity> iterable = bookRepository.findAllByNameTitleContaining(name);
+        return StreamSupport.stream(iterable.spliterator(), false)
+                .map(mapper::bookEntityToBook)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public List<Book> getAllBooks() {
         Iterable<BookEntity> iterable = bookRepository.findAll();
         return StreamSupport.stream(iterable.spliterator(), false)

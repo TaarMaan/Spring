@@ -12,6 +12,10 @@ public class BookService {
         return null;
     }
 
+    List<Book> findByName(String name) {
+        return null;
+    }
+
     void addBook(Book book) {
 
     }
