@@ -1,10 +1,30 @@
 package com.example.spring;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequestMapping("/titles")
+@RequiredArgsConstructor
 public class TitleController {
 
+    private final BookService bookService;
+    private final BookToDtoMapper mapper;
+
+    @GetMapping("/{id}")
+    public Book getBookById(@PathVariable Long id) {
+        return bookService.getBookById(id);
+    }
+
+    @GetMapping
+    public List<Book> getAllBooks() {
+        return bookService.getAllBooks();
+    }
+
+    @PostMapping
+    public void addBook(@RequestBody BookRequest request) {
+        bookService.addBook(mapper.AddBookRequestToBook(request));
+    }
 }
