@@ -1,5 +1,10 @@
-package com.example.spring;
+package com.example.spring.service;
 
+import com.example.spring.dao.BookEntity;
+import com.example.spring.exception.TitleNotFoundException;
+import com.example.spring.mapper.BookToEntityMapper;
+import com.example.spring.model.Book;
+import com.example.spring.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +22,7 @@ public class DefaultBookService extends BookService {
     public Book getBookById(Long id) {
         BookEntity bookEntity = bookRepository
                 .findById(id)
-                .orElseThrow(() -> new BookNotFoundException("Book not found: id = " + id));
+                .orElseThrow(() -> new TitleNotFoundException("Book not found: id = " + id));
 
         return mapper.bookEntityToBook(bookEntity);
     }

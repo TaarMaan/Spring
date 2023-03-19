@@ -1,4 +1,4 @@
-package com.example.spring;
+package com.example.spring.dao;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.example.spring;
+package com.example.spring.model;
 
 import lombok.Value;
 

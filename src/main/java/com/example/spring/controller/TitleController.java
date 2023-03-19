@@ -1,5 +1,9 @@
-package com.example.spring;
+package com.example.spring.controller;
 
+import com.example.spring.model.Book;
+import com.example.spring.model.BookRequest;
+import com.example.spring.mapper.BookToDtoMapper;
+import com.example.spring.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
