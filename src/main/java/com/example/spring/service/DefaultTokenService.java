@@ -1,3 +1,4 @@
+/*
 package com.example.spring.service;
 
 import com.auth0.jwt.JWT;
@@ -39,3 +40,4 @@ public class DefaultTokenService extends TokenService {
         return true;
     }
 }
+*/
