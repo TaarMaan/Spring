@@ -14,7 +14,7 @@ import java.util.stream.StreamSupport;
 
 @Service
 @RequiredArgsConstructor
-public class DefaultBookService extends BookService {
+public class DefaultBookService implements BookService {
     private final BookRepository bookRepository;
     private final BookToEntityMapper mapper;
 
@@ -26,18 +26,30 @@ public class DefaultBookService extends BookService {
 
         return mapper.bookEntityToTitle(bookEntity);
     }
-
     @Override
-    public List<Title> findByName(String name) {
-        Iterable<BookEntity> iterable = bookRepository.findAllByNameTitleContaining(name);
+    public List<Title> getAllTitles() {
+        Iterable<BookEntity> iterable = bookRepository.findAll();
         return StreamSupport.stream(iterable.spliterator(), false)
                 .map(mapper::bookEntityToTitle)
                 .collect(Collectors.toList());
     }
-
     @Override
-    public List<Title> getAllTitles() {
-        Iterable<BookEntity> iterable = bookRepository.findAll();
+    public List<Title> findByName(String name) {
+        Iterable<BookEntity> iterable = bookRepository.findAllByNameContaining(name);
+        return StreamSupport.stream(iterable.spliterator(), false)
+                .map(mapper::bookEntityToTitle)
+                .collect(Collectors.toList());
+    }
+    @Override
+    public List<Title> findByRating(Double rating) {
+        Iterable<BookEntity> iterable = bookRepository.findAllByRatingContaining(rating);
+        return StreamSupport.stream(iterable.spliterator(), false)
+                .map(mapper::bookEntityToTitle)
+                .collect(Collectors.toList());
+    }
+    @Override
+    public List<Title> findByCategory(String category) {
+        Iterable<BookEntity> iterable = bookRepository.findAllByCategoryContaining(category);
         return StreamSupport.stream(iterable.spliterator(), false)
                 .map(mapper::bookEntityToTitle)
                 .collect(Collectors.toList());
@@ -47,5 +59,14 @@ public class DefaultBookService extends BookService {
     public void addTitle(Title title) {
         BookEntity bookEntity = mapper.bookToTitleEntity(title);
         bookRepository.save(bookEntity);
+    }
+    @Override
+    public void editTitle(Title title) {
+        if (!bookRepository.existsById(title.getId()))
+            throw new TitleNotFoundException("Book not found: id = " + title.getId());
+
+        BookEntity bookEntity = mapper.bookToTitleEntity(title);
+        bookRepository.save(bookEntity);
+
     }
 }

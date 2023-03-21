@@ -7,5 +7,6 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface BookToEntityMapper {
     BookEntity bookToTitleEntity(Title Title);
+
     Title bookEntityToTitle(BookEntity bookEntity);
 }
