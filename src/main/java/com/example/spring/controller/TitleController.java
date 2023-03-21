@@ -27,7 +27,7 @@ public class TitleController {
 
     @GetMapping
     public List<Title> getAllTitles(@RequestParam(required = false)
-                                    String category,String name,Double rating) {
+                                    String category,String name,String rating) {
         if (category != null)
             return bookService.findByCategory(category);
         else if(name != null)

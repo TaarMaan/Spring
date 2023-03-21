@@ -9,6 +9,6 @@ public interface BookRepository extends CrudRepository<BookEntity, Long> {
 
     List<BookEntity> findAllByCategoryContaining(String category);
 
-    List<BookEntity> findAllByRatingContaining(Double rating);
+    List<BookEntity> findAllByRatingContaining(String rating);
 
 }

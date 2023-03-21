@@ -41,7 +41,7 @@ public class DefaultBookService implements BookService {
                 .collect(Collectors.toList());
     }
     @Override
-    public List<Title> findByRating(Double rating) {
+    public List<Title> findByRating(String rating) {
         Iterable<BookEntity> iterable = bookRepository.findAllByRatingContaining(rating);
         return StreamSupport.stream(iterable.spliterator(), false)
                 .map(mapper::bookEntityToTitle)

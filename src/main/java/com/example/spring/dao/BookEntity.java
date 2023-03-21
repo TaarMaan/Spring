@@ -23,5 +23,5 @@ public class BookEntity {
 
     private String name;
 
-    private Double rating;
+    private String rating;
 }

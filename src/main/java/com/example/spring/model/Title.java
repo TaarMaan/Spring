@@ -7,5 +7,5 @@ public class Title {
     Long id;
     String category;
     String name;
-    Double rating;
+    String rating;
 }
