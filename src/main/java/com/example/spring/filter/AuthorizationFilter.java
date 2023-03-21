@@ -1,4 +1,3 @@
-/*
 package com.example.spring.filter;
 
 import com.example.spring.service.TokenService;
@@ -46,4 +45,3 @@ public class AuthorizationFilter extends OncePerRequestFilter {
         return tokenService.checkToken(token);
     }
 }
-*/

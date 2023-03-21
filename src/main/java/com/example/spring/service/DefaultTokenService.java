@@ -1,4 +1,3 @@
-/*
 package com.example.spring.service;
 
 import com.auth0.jwt.JWT;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class DefaultTokenService extends TokenService {
+public class DefaultTokenService implements TokenService {
     @Value("${auth.jwt.secret}")
     private String secretKey;
 
@@ -40,4 +39,3 @@ public class DefaultTokenService extends TokenService {
         return true;
     }
 }
-*/
