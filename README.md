@@ -21,8 +21,9 @@ Api-GateWay part - is the connecting link of all services, serves to combine and
 ("/registration" part of link in Gate) - we record user data in the customer database.
 
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/1.PNG)
+### Veiw of hash in db 'titles'
 
-![Veiw of hash in db 'titles'](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/2.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/2.PNG)
 
 ## getToken 
 
@@ -37,13 +38,13 @@ list of all titles
 
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/4.PNG)
 
-rating search
+### rating search
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/4-2.PNG)
 
-name search
+### name search
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/4-3.PNG)
 
-category search
+### category search
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/4-4.PNG)
 
 ## getTitleById 
@@ -55,28 +56,28 @@ category search
 
 ("/titles/{id}" part of link in Gate) - allows you to edit the data in the book 
 
-request
+### request
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/6.PNG)
 
-result
+### result
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/6-2.PNG)
 
 ## addTitle 
 
 ("/titles" part of link in Gate) - creates a new entry in the book
 
-request
+### request
 ![]([about/7.PNG](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/7.PNG))
 
-result
+### result
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/7-2.PNG)
 
 ## deleteTitle 
 
 ("/titles/{id}" part of link in Gate) - deletes an entry in the book
 
-request
+### request
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/8.PNG)
 
-result
+### result
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/8-2.PNG)
