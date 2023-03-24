@@ -4,6 +4,8 @@ import com.example.spring.model.BookRequest;
 import com.example.spring.model.Title;
 import org.mapstruct.Mapper;
 
+import java.awt.print.Book;
+
 @Mapper(componentModel = "spring")
 public interface BookToDtoMapper {
     /**
@@ -12,4 +14,5 @@ public interface BookToDtoMapper {
     Title AddTitleRequestToBook(BookRequest bookRequest);
 
     Title EditTitleRequestToBook(Long id, BookRequest bookRequest);
+
 }

@@ -15,6 +15,7 @@ public class DefaultTokenService implements TokenService {
     /**
      * Реализация интерфейса TokenService по проверке полученного токена и записи данных
      * пользователя в виде хэша в свою бд.
+     * @Slf4j - аннотация импортирующая библиотеку для логирования
      */
     @Value("${auth.jwt.secret}")
     private String secretKey;

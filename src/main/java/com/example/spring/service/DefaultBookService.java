@@ -79,4 +79,12 @@ public class DefaultBookService implements BookService {
         bookRepository.save(bookEntity);
 
     }
+
+    @Override
+    public void deleteTitle(Long id){
+        BookEntity bookEntity = bookRepository
+                .findById(id)
+                .orElseThrow(() -> new TitleNotFoundException("Book not found: id = " + id));
+        bookRepository.delete(bookEntity);
+    }
 }

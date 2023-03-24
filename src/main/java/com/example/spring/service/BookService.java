@@ -22,4 +22,5 @@ public interface BookService {
 
     void editTitle(Title title);
 
+    void deleteTitle(Long id);
 }

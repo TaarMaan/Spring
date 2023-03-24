@@ -52,6 +52,10 @@ public class TitleController {
         bookService.editTitle(mapper.EditTitleRequestToBook(id, request));
     }
 
+    @DeleteMapping("/delete/{id}")
+    public void deleteTitle(@PathVariable Long id) {
+        bookService.deleteTitle(id);
+    }
 
     //-------------------------------------------------------
     /*@GetMapping("/category")
