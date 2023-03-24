@@ -18,7 +18,7 @@ Api-GateWay part - is the connecting link of all services, serves to combine and
 ## Methods
 
 - register ("/registration" part of link in Gate) - we record user data in the customer database.
-![](src/main/resources/1.png)
+![](resources/1.png)
 Veiw of hash in db 'titles'
 ![](src/main/resources/2.png)
 - getToken ("/login" part of link in Gate) - we check the entered data and issues a token
