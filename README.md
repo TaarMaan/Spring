@@ -21,38 +21,38 @@ Api-GateWay part - is the connecting link of all services, serves to combine and
 ("/registration" part of link in Gate) - we record user data in the customer database.
 Veiw of hash in db 'titles'
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/1.PNG)
-![](about/2.PNG)
+![]([about/2.PNG](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/2.PNG))
 ## getToken 
 ("/login" part of link in Gate) - we check the entered data and issues a token
-![](about/3.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/3.PNG)
 ## getAllTitles 
 ("/titles" part of ling in Gate) - performs a serch all titles list. Also, after adding in signature of link: "? + {name/category/rating} = required data for search, it becomes possible to modernize the output of the sheet of all titles according to the required search pattern. Example of request:
 list of all titles
-![](about/4.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/4.PNG)
 rating search
-![](about/4-2.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/4-2.PNG)
 name search
-![](about/4-3.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/4-3.PNG)
 category search
-![](about/4-4.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/4-4.PNG)
 ## getTitleById 
 ("/titles/{id}" part of link in Gate) - performs a search by ID.
-![](about/5.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/5.PNG)
 ## editTitle 
 ("/titles/{id}" part of link in Gate) - allows you to edit the data in the book 
 request
-![](about/6.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/6.PNG)
 result
-![](about/6-2.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/6-2.PNG)
 ## addTitle 
 ("/titles" part of link in Gate) - creates a new entry in the book
 request
-![](about/7.PNG)
+![]([about/7.PNG](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/7.PNG))
 result
-![](about/7-2.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/7-2.PNG)
 ## deleteTitle 
 ("/titles/{id}" part of link in Gate) - deletes an entry in the book
 request
-![](about/8.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/8.PNG)
 result
-![](about/8-2.PNG)
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/8-2.PNG)
