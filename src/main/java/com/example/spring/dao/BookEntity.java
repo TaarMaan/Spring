@@ -15,6 +15,13 @@ import lombok.NoArgsConstructor;
         @Index(name = "idx_titles_rating", columnList = "rating")
 })
 public class BookEntity {
+    /**
+     * Data-класс соответствующий таблице в бд
+     * При помощи аннотаций @Data - добавляем геттеры/сеттеры,
+     *
+     * @NoArgsConstructor, @AllArgsConstructor - конструкторы без параметров и со всеми параметрами.
+     * Остальные аннотации относятся к JPA (манипулирование полями из таблицы)
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

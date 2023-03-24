@@ -6,6 +6,9 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface BookToDtoMapper {
+    /**
+     * Mapper для получения данных из объекта класса BookRequest.
+     */
     Title AddTitleRequestToBook(BookRequest bookRequest);
 
     Title EditTitleRequestToBook(Long id, BookRequest bookRequest);

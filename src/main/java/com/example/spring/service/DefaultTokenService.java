@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class DefaultTokenService implements TokenService {
+    /**
+     * Реализация интерфейса TokenService по проверке полученного токена и записи данных
+     * пользователя в виде хэша в свою бд.
+     */
     @Value("${auth.jwt.secret}")
     private String secretKey;
 

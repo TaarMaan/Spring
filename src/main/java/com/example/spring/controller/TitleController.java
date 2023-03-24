@@ -4,10 +4,7 @@ import com.example.spring.model.Title;
 import com.example.spring.model.BookRequest;
 import com.example.spring.mapper.BookToDtoMapper;
 import com.example.spring.service.BookService;
-//import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-//import org.springframework.ui.Model;
-//import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +13,14 @@ import java.util.List;
 @RequestMapping("/titles")
 @RequiredArgsConstructor
 public class TitleController {
+    /**
+     * TitleController - класс контроллер в который будут приходить http-запросы от клиента.
+     *
+     * @RestController - аннотация, состоящая из (@Controller & @ResponseBody), указывая на контроллер для Spring.
+     *
+     * @RequestMapping - аннотация, включающая в свой аргумент часть http-запроса, которая будет предшествовать
+     * каждому из функциональных эндпоинтов.
+     */
 
     private final BookService bookService;
     private final BookToDtoMapper mapper;
@@ -27,16 +32,28 @@ public class TitleController {
 
     @GetMapping
     public List<Title> getAllTitles(@RequestParam(required = false)
-                                    String category,String name,String rating) {
+                                    String category, String name, String rating) {
         if (category != null)
             return bookService.findByCategory(category);
-        else if(name != null)
+        else if (name != null)
             return bookService.findByName(name);
-        else if(rating != null)
+        else if (rating != null)
             return bookService.findByRating(rating);
         return bookService.getAllTitles();
     }
 
+    @PostMapping
+    public void addTitle(@RequestBody BookRequest request) {
+        bookService.addTitle(mapper.AddTitleRequestToBook(request));
+    }
+
+    @PutMapping("/{id}")
+    public void editTitle(@PathVariable Long id, @RequestBody BookRequest request) {
+        bookService.editTitle(mapper.EditTitleRequestToBook(id, request));
+    }
+
+
+    //-------------------------------------------------------
     /*@GetMapping("/category")
     public List<Title> getAllTitlesByCategory(@PathVariable String category) {
         return bookService.findByCategory(category);
@@ -51,16 +68,6 @@ public class TitleController {
     public List<Title> getAllTitlesByRating(@PathVariable Double rating) {
         return bookService.findByRating(rating);
     }*/
-
-    @PostMapping
-    public void addTitle(@RequestBody BookRequest request) {
-        bookService.addTitle(mapper.AddTitleRequestToBook(request));
-    }
-
-    @PutMapping("/{id}")
-    public void editTitle(@PathVariable Long id, @RequestBody BookRequest request) {
-        bookService.editTitle(mapper.EditTitleRequestToBook(id, request));
-    }
 //--------------------------------------------------------
 //Потенциальные изменения к переходу отоброжений в html
     /*@GetMapping("/{id}")

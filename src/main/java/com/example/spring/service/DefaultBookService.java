@@ -15,6 +15,11 @@ import java.util.stream.StreamSupport;
 @Service
 @RequiredArgsConstructor
 public class DefaultBookService implements BookService {
+    /**
+     * DefaultBookService - реализация интерфейса BookService (сервисный слой)
+     *
+     * @Service - благодаря этой аннотации Spring создает объект класса
+     */
     private final BookRepository bookRepository;
     private final BookToEntityMapper mapper;
 
@@ -26,6 +31,7 @@ public class DefaultBookService implements BookService {
 
         return mapper.bookEntityToTitle(bookEntity);
     }
+
     @Override
     public List<Title> getAllTitles() {
         Iterable<BookEntity> iterable = bookRepository.findAll();
@@ -33,6 +39,7 @@ public class DefaultBookService implements BookService {
                 .map(mapper::bookEntityToTitle)
                 .collect(Collectors.toList());
     }
+
     @Override
     public List<Title> findByName(String name) {
         Iterable<BookEntity> iterable = bookRepository.findAllByNameContaining(name);
@@ -40,6 +47,7 @@ public class DefaultBookService implements BookService {
                 .map(mapper::bookEntityToTitle)
                 .collect(Collectors.toList());
     }
+
     @Override
     public List<Title> findByRating(String rating) {
         Iterable<BookEntity> iterable = bookRepository.findAllByRatingContaining(rating);
@@ -47,6 +55,7 @@ public class DefaultBookService implements BookService {
                 .map(mapper::bookEntityToTitle)
                 .collect(Collectors.toList());
     }
+
     @Override
     public List<Title> findByCategory(String category) {
         Iterable<BookEntity> iterable = bookRepository.findAllByCategoryContaining(category);
@@ -60,6 +69,7 @@ public class DefaultBookService implements BookService {
         BookEntity bookEntity = mapper.bookToTitleEntity(title);
         bookRepository.save(bookEntity);
     }
+
     @Override
     public void editTitle(Title title) {
         if (!bookRepository.existsById(title.getId()))

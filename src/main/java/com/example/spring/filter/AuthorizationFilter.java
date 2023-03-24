@@ -16,6 +16,9 @@ import java.io.IOException;
 @Component
 @RequiredArgsConstructor
 public class AuthorizationFilter extends OncePerRequestFilter {
+    /**
+     * Фильтр, который читает заголовок и пропускает или не пропускает авторизованного клиента
+     */
 
     private final TokenService tokenService;
 
