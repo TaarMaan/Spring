@@ -21,7 +21,7 @@ Api-GateWay part - is the connecting link of all services, serves to combine and
 ("/registration" part of link in Gate) - we record user data in the customer database.
 Veiw of hash in db 'titles'
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/1.PNG)
-![]([about/2.PNG](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/2.PNG))
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/2.PNG)
 ## getToken 
 ("/login" part of link in Gate) - we check the entered data and issues a token
 ![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/3.PNG)
