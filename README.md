@@ -18,9 +18,9 @@ Api-GateWay part - is the connecting link of all services, serves to combine and
 ## Methods
 
 - register ("/registration" part of link in Gate) - we record user data in the customer database.
-![]https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/1.PNG
+![](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/1.PNG)
 Veiw of hash in db 'titles'
-![](src/main/resources/2.png)
+![Veiw of hash in db 'titles'](https://github.com/TaarMaan/Spring/blob/master/src/main/resources/about/2.PNG)
 - getToken ("/login" part of link in Gate) - we check the entered data and issues a token
 ![](src/main/resources/3.png)
 - getAllTitles ("/titles" part of ling in Gate) - performs a serch all titles list. Also, after adding in signature of link: "? + {name/category/rating} = required data for search, it becomes possible to modernize the output of the sheet of all titles according to the required search pattern. Example of request:
